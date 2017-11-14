@@ -1,0 +1,17 @@
+<li class="breadcrumb container">
+
+	{{#unless devoured}}
+		<div class="col-lg-7 text-center">
+		{{burger_name}}
+		</div>
+
+		<button class="change-devoured btn btn-primary col-lg-5" data-id="{{id}}" data-newdevoured = "{{devoured}}">Devour Da Burger!
+	{{/unless}}
+
+	{{#if devoured}}
+		<div class="col-lg-12 text-center">
+			{{burger_name}}
+		</div>
+	{{/if}}
+	
+</li>
