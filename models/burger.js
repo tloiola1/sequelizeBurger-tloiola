@@ -1,4 +1,4 @@
-
+//Dependencies
 
 module.exports = function(sequelize, DataTypes) {
   var burger = sequelize.define("burgers", {

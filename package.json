@@ -4,6 +4,7 @@
   "description": "This homework assignment is **optional**.",
   "main": "html-routes.js",
   "dependencies": {
+    "data-type": "^0.1.3",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
