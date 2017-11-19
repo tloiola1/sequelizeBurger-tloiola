@@ -1,88 +1,27 @@
 # Burger 2: The Sequel
 
-### Overview
+Sequelize Eat-da-burger
 
-This homework assignment is **optional**. 
+For this application to work properly you are going to need to run a database and a MySQL password. To make things easier, follow the steps. 
+1-	Create a database called "sequelizeburgers_db", do not create a table since sequelize will create it for you.
+2-  Go to the config/config.json file and add your password, assuming that you are going to use locally; otherwise, add your credentials to that file.
+3-	In your terminal, download node_modules necessary for your dependencies by entering npm install. 
+4-	You are all set!
 
-In this assignment, you're going to Sequelize the `Burger` app you made last week. We've split this exercise into three different tiers, all with different tasks and expectations. Finish whichever tier will provide you with the most reasonable challenge.
+##Overview 
 
-### Before you Begin
+This Program is a full MVC application on node.js interacting with MySQL as source of data. The first file to run is the server.js, which is requiring the dependencies necessaries to run the application such as, express, body-parser, express-handlebars, method-override, and mysql. It is connecting to port 3002 or any other port that is available. App first run on the main HTML body as default layout using Handlebars.
 
-1. Create a new folder called `sequelizedBurger`
-2. Copy the contents of your completed assignment from last week.
-   * Remove the older git connection with `rm -R .git`. 
-   * Then connect this folder with a new github repo.
-3. Run `sequelize init` to create the necessary files.
+Second, it syncs to the database through the index.js file and config.json to look for the credentials, then it creates a table pre designed in the models/burger.js file. Now it connect to the database and Port connection should be 8080.
 
-4. **Note**: If for any reason you don't have a finished assignment for last week, no problem. Message the instructor, who will provide you will a skeleton file to work of for this week.
+Open your browser on localhost:8080
 
-## Instructions
+Assuming your database is empty, lets go and add some yummy burger into your database.
 
-Put in your best efforts to complete one of the three available challenge tiers. Remember to deploy your assignment to Heroku once complete.
+Notice that if you just hit place oder button it will not allow you to create, or add an item to your database. Its using node validator to validate user input. So add something YUMMY in there. 
 
-#### Tier 1: Sequelized! (Basic to Moderate)
+Now you have a burger on left window.
 
-* Remove all references to your vanilla MySQL queries and replace them with Sequelize queries.
+You notice that each burger on the left, has not been eaten yet, So they have a button, that if clicked, it is going to restart the database and move that burger you have just clicked to devoured side, right side.
 
-* That means:
-
-  * Replacing your MySQL `Burger` model with a Sequelized equivalent.
-
-    * Don't forget to edit the model and initial migration file to make the burger's devoured field carry a default value of false -- otherwise you might encounter bugs.
-      * There's no option to include that default in the command line, so you'll need to open up Sublime to make this change. 
-    * Don't forget to sync the models!
-
-    * Edit your new `config.json` file to include your database configurations. Place your JawsDB details in the `production` property of your json file; the details of your local database go in the `developer` property.
-
-    * Remove your old ORM file, as well as any references to it in `burgers_controller.js`. Replace those references with Sequelize's ORM methods.
-
-* When you finish, your site should function just like your last one:
-    ![1-Sequelized](Images/1-Sequelized.jpg) 
-
-#### Tier 2: Customer Associations (Challenge)
-
-* Add in a Customer association to the project. This will involve creating at least one new Customer model and connecting it with your Burger model.
-
-* What kind of association you would like to use is up to you. Does a Customer have one Burger? Many Burgers?
-
-* For example, you could make a site that logs the name of which Customer ate which Burger, where each Customer only gets one Burger. If you can't think of another type of association, try this one!
-
-    ![3-Associated](Images/3-Associated.jpg)
-
-* If you do go select this tier, you must edit the handlebars files and CSS stylesheets to implement some sort of additional feature to the site. We don't want you to just connect two models and submit your project. Make your site do something relevant to this association.
-
-#### Bonus! (Challenge)
-
-* Add validations to your models where:
-
-  * A burger's name cannot be null
-  * A burger's devoured status is false by default
-  * A Customer's name cannot be null
-
-* Order the Burgers you send back to the user in alphabetical order using the Sequelize "order" option.
-
-- - -
-
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed.
-
-- - -
-
-### Hosting on Heroku
-
-Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database. 
-
-Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details. 
-
-- - -
-
-### One More Thing
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-**Good Luck!**
-
-## Copyright
-
-Coding Boot Camp (C) 2016. All Rights Reserved.
+It is all happening inside your database as well. If you go back to your database, you notice the changes you have made to it. If not, you might need to refresh the database.
