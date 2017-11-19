@@ -7,28 +7,28 @@
 
       <ol>
         {{#each burgers}}
-          {{#unless devoured}}
-            {{> burgers/burger-block devoured=false}}
-          {{/unless}}
+          {{#if devoured}}
+            {{> burgers/burger-block}}
+          {{/if}}
         {{/each}}
       </ol>
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <h2 class="text-center">Devoured Burgers.</h2>
-
+ 
       <ol>
         {{#each burgers}}
-          {{#if devoured}}
-            {{> burgers/burger-block devoured=true}}
-          {{/if}}
+          {{#unless devoured}}
+            {{> burgers/burger-block}}
+          {{/unless}}
         {{/each}}
       </ol>
     </div>
 
     <div class="col-lg-12  text-center"> 
       <h2>Add da burger</h2>
-      <form class="create-form">
+      <form class="create-form" action="api/burgers" method="POST">
 
         <div class="form-group">
           <label for="bu">Enter the Burger of Your Choice</label>

@@ -1,33 +1,29 @@
 {
-  "name": "burger",
+  "name": "sequelizeBurger-tloiola",
   "version": "1.0.0",
-  "description": "Eat-da-burger",
-  "main": "server.js",
+  "description": "This homework assignment is **optional**.",
+  "main": "html-routes.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.0"
+  },
+  "devDependencies": {},
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tloiola1/burger.git"
+    "url": "git+https://github.com/tloiola1/sequelizeBurger-tloiola.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tloiola1/burger/issues"
+    "url": "https://github.com/tloiola1/sequelizeBurger-tloiola/issues"
   },
-  "homepage": "http://github.com/tloiola1/burger/server.js",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "coloring": "^0.1.0",
-    "express": "^4.16.2",
-    "express-handlebars": "^2.0.1",
-    "inquirer": "^4.0.0",
-    "method-override": "^2.3.10",
-    "mysql": "^2.15.0",
-    "mysql2": "^1.5.0"
-  },
-  "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
-  }
+  "homepage": "https://github.com/tloiola1/sequelizeBurger-tloiola#readme"
 }

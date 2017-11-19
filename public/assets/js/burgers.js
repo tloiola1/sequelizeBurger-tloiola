@@ -3,15 +3,16 @@ $(function() {
   $(".change-devoured").on("click", function(event) {
     var id = $(this).data("id");
     var newdevoured = $(this).data("devoured");
-    newdevoured = true;
+    newdevoured = false;
 
     var newdevouredState = {
       devoured: newdevoured
     };
 
     // Send the PUT request.
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
+    $.ajax({
+      url:"/api/update/" + id,
+      method: "PUT",
       data: newdevouredState
     }).then(
       function() {
@@ -27,13 +28,13 @@ $(function() {
 
     var newburger = {
       burger_name: $("#burg").val().trim(),
-      devoured: false
     };
     console.log(newburger.burger_name);
     console.log(newburger.devoured);
     // Send the POST request.
-    $.ajax("/api/burgers", {
-      type: "POST",
+    $.ajax({
+      url:"/api/create",
+      method: "POST",
       data: newburger
     }).then(
       function() {

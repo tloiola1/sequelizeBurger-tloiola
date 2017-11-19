@@ -1,38 +1,88 @@
-# burger
-Eat-da-burger
+# Burger 2: The Sequel
 
-For this application to work properly you are going to need to run a database and provide a MySQL password.
-To make things easier, follow the steps.
-1-	Inside the burger Directory, or Main Directory, create a JavaScript file called key.js. 
-2-	Inside the key.js file enter the following syntaxes.
-var key = {
-	secret_key: "Your MySQL password goes here, inside the double quotes"
-};
-module.exports = key.secret_key;
-3-	Go to db Directory and run sql file schema.sql in your MySQL to create a database and table.
-4-	Still inside db Directory, run seeds.sql in your MySQL to insert values into your table.
-5-	Almost forgot, in your terminal, download node_modules for your dependencies by entering npm install.
-6-	You are all set!
+### Overview
 
-Overview
-This Program is a full MVC application on node.js interacting with MySQL as source of data.
-The first file to run is the server.js, which is requiring the dependencies necessaries to run the application 
-such as, express, body-parser, express-handlebars, method-override, and mysql. It is connecting to port 3002 or 
-any other port that is available. App first run on the main HTML body as default layout using Handlebars.
+This homework assignment is **optional**. 
 
-Second file to run is the connection.js, which require key.js file to retrieve the password, then connecting to 
-the database using basic MySQL connection standard. After connected it is exported to be used by orm.js file. 
-But first, it passes again at the server which calls for the specific router inside the burgers-controllers.js file. 
-Inside the controller, it is then render all the data information to the view directory where contains the index.html 
-file to display all the database contents. Now it is connected to a localhost on an id determined by your computer.
+In this assignment, you're going to Sequelize the `Burger` app you made last week. We've split this exercise into three different tiers, all with different tasks and expectations. Finish whichever tier will provide you with the most reasonable challenge.
 
-Open your browser on localhost:3002
+### Before you Begin
 
-Now inside the browser, you can interact with this application by adding products into it (more specific, burgers, yummy!!).
- You notice that each burger on the left that has not been eaten yet has a button, that if clicked, it is going to restart 
-the database and move that burger you have just clicked to devoured side, right side. Also, on the bottom there is a input 
-section where you can enter your favorite burger and clicking the place order button to add it to the waiting to be devour 
-section, left side.
+1. Create a new folder called `sequelizedBurger`
+2. Copy the contents of your completed assignment from last week.
+   * Remove the older git connection with `rm -R .git`. 
+   * Then connect this folder with a new github repo.
+3. Run `sequelize init` to create the necessary files.
 
-It is all happening inside your database as well. If you go back to your database, you notice the changes you have made to it. 
-If not, you might need to refresh the database.
+4. **Note**: If for any reason you don't have a finished assignment for last week, no problem. Message the instructor, who will provide you will a skeleton file to work of for this week.
+
+## Instructions
+
+Put in your best efforts to complete one of the three available challenge tiers. Remember to deploy your assignment to Heroku once complete.
+
+#### Tier 1: Sequelized! (Basic to Moderate)
+
+* Remove all references to your vanilla MySQL queries and replace them with Sequelize queries.
+
+* That means:
+
+  * Replacing your MySQL `Burger` model with a Sequelized equivalent.
+
+    * Don't forget to edit the model and initial migration file to make the burger's devoured field carry a default value of false -- otherwise you might encounter bugs.
+      * There's no option to include that default in the command line, so you'll need to open up Sublime to make this change. 
+    * Don't forget to sync the models!
+
+    * Edit your new `config.json` file to include your database configurations. Place your JawsDB details in the `production` property of your json file; the details of your local database go in the `developer` property.
+
+    * Remove your old ORM file, as well as any references to it in `burgers_controller.js`. Replace those references with Sequelize's ORM methods.
+
+* When you finish, your site should function just like your last one:
+    ![1-Sequelized](Images/1-Sequelized.jpg) 
+
+#### Tier 2: Customer Associations (Challenge)
+
+* Add in a Customer association to the project. This will involve creating at least one new Customer model and connecting it with your Burger model.
+
+* What kind of association you would like to use is up to you. Does a Customer have one Burger? Many Burgers?
+
+* For example, you could make a site that logs the name of which Customer ate which Burger, where each Customer only gets one Burger. If you can't think of another type of association, try this one!
+
+    ![3-Associated](Images/3-Associated.jpg)
+
+* If you do go select this tier, you must edit the handlebars files and CSS stylesheets to implement some sort of additional feature to the site. We don't want you to just connect two models and submit your project. Make your site do something relevant to this association.
+
+#### Bonus! (Challenge)
+
+* Add validations to your models where:
+
+  * A burger's name cannot be null
+  * A burger's devoured status is false by default
+  * A Customer's name cannot be null
+
+* Order the Burgers you send back to the user in alphabetical order using the Sequelize "order" option.
+
+- - -
+
+### Minimum Requirements
+
+Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed.
+
+- - -
+
+### Hosting on Heroku
+
+Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database. 
+
+Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details. 
+
+- - -
+
+### One More Thing
+
+If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
+
+**Good Luck!**
+
+## Copyright
+
+Coding Boot Camp (C) 2016. All Rights Reserved.
